@@ -6,16 +6,12 @@
         <div>
             <h1><a href="/">Hannah's Blog</a></h1>
         </div>
-        <div>
-            <p>published: 22.09.2019, 12:38pm</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae quisquam dolorum ullam velit, sint ex aliquid adipisci atque voluptate quos. Labore, accusantium cupiditate? Minus voluptate accusamus magnam inventore eligendi voluptates.</p>
-        </div>
-
-        <div>
-            <p>published: 22.09.2019, 12:39pm</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio iusto nihil tenetur quos aliquid vitae sit nostrum facilis labore laboriosam numquam, placeat repellat at magnam perferendis aliquam ratione dicta sunt?</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title}}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
